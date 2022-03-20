@@ -201,6 +201,9 @@ pipeline {
               label 'hbase'
             }
           }
+          when {
+            branch 'branch-1*'
+          }
           environment {
             BASEDIR = "${env.WORKSPACE}/component"
             TESTS = "${env.SHALLOW_CHECKS}"
@@ -412,6 +415,9 @@ pipeline {
               label 'hbase'
             }
           }
+          when {
+            branch 'branch-1*'
+          }
           environment {
             BASEDIR = "${env.WORKSPACE}/component"
             TESTS = "${env.DEEP_CHECKS}"
@@ -520,9 +526,7 @@ pipeline {
             }
           }
           when {
-            not {
-              branch 'branch-1*'
-            }
+            branch 'branch-1*'
           }
           environment {
             BASEDIR = "${env.WORKSPACE}/component"
@@ -634,9 +638,7 @@ pipeline {
             }
           }
           when {
-            not {
-              branch 'branch-1*'
-            }
+            branch 'branch-1*'
           }
           environment {
             BASEDIR = "${env.WORKSPACE}/component"
